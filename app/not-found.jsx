@@ -1,6 +1,8 @@
+export const dynamic = "force-static";
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 const NotFound = () => {
   return (
@@ -16,6 +18,6 @@ const NotFound = () => {
       </Link>
     </div>
   );
-}
+};
 
 export default NotFound;
