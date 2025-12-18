@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This is the most important part: 
-  // It stops the crashing background process
   experimental: {
     webpackBuildWorker: false,
   },
-  // This ignores minor errors to let the build finish
-  eslint: {
-    ignoreDuringBuilds: true,
+  webpack: (config, { isServer }) => {
+    // Disable CSS optimization that is causing the crash
+    if (config.optimization && config.optimization.minimizer) {
+      config.optimization.minimize = false;
+    }
+    return config;
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
