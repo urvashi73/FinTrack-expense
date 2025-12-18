@@ -7,6 +7,10 @@ const nextConfig = {
     webpackBuildWorker: false,
   },
 
+  images: {
+    domains: ["randomuser.me"],
+  },
+
   webpack: (config) => {
     config.optimization.minimize = false;
     return config;

@@ -11,7 +11,7 @@ import { Switch } from './ui/switch';
 import { Button } from './ui/button';
 import useFetch from '@/hooks/use-fetch';
 import { Loader2 } from 'lucide-react';
-import { createAccount } from "@/actions/dashboard";
+import { createAccount } from "@/app/actions/createAccount";
 import { toast } from 'sonner';
 
 
